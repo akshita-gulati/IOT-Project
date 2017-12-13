@@ -139,7 +139,7 @@ void loop() {
         // If the beam was broken before, then this is a new status.
         // We will send a publish to the cloud and turn the LED on.
         // Send a publish to your devices...
-        Spark.publish("beamStatus","intact",60,PRIVATE);
+        Particle.publish("beamStatus","intact",60,PRIVATE);
         // And flash the on-board LED on and off.
         digitalWrite(boardLed,HIGH);
         delay(500);
@@ -155,7 +155,7 @@ void loop() {
       // If you are below the threshold, the beam is probably broken.
       if (beamBroken==false) {
         // Send a publish...
-        Spark.publish("beamStatus","broken",60,PRIVATE);
+        Particle.publish("beamStatus","broken",60,PRIVATE);
         // And flash the on-board LED on and off.
         digitalWrite(boardLed,HIGH);
         delay(500);
